@@ -1,6 +1,6 @@
 
 import '../App.css';
-import { Layout } from 'antd';
+import { Layout, Spin } from 'antd';
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { lazy, Suspense, useEffect } from 'react';
 import MenuNav from "../common/components/Menu";
@@ -29,7 +29,7 @@ function App() {
         <Layout style={{margin:"10px"}}>
           <Header style={{ height: "auto", background: "#339999" ,marginBottom:"10px"}}><Header_r /></Header>
           <Content >
-            <Suspense fallback={<div>loading...</div>}>
+             <Suspense fallback={<div style={{textAlign:"center"}}>  <Spin size="large" /></div>}>
               <Switch>
                 <PrivateRoute path="/" component={Movies} redirectComp="/signin"  exact />
                 <PrivateRoute path="/addnew" component={Create} redirectComp="/signin" />
