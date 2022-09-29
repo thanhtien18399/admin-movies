@@ -14,13 +14,15 @@ function MenuNav() {
             theme="dark"
             items={[
                 { label: ` Cyber Cinema`, key: "logo", icon: <i className="fa-solid fa-film"></i> },
-                { label: "User", key: "user" },
+                { label: "User", key: "user" ,children:[{
+                    label: <NavLink to="/users">Management User</NavLink> , key: "manageUser"
+                }]},
                 {
                     label: "Filims", key: "films", children: [{
                         label: <NavLink to="/">Films</NavLink> , key: "film"
                     },
                     {
-                        label:<NavLink to="/create">add new</NavLink>, key:"addfilm"
+                        label:<NavLink to="/addnew">add new</NavLink>, key:"addfilm"
                     }]
                 },
                 { label: "Showtime", key: "showTime" },

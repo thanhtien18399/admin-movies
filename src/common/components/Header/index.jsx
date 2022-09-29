@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import profileSlice from '../../../featurns/authentication/utils/authSlice';
 import Style from "./style.module.css"
+import {UserOutlined,LogoutOutlined} from "@ant-design/icons"
 function Header() {
   const history = useHistory();
   const userProfile = useSelector((state) => state.auth.profile);
@@ -20,8 +21,8 @@ function Header() {
     if (userProfile) {
       return (
         <>
-          <a href='#'>Hi, {userProfile.hoTen}</a>
-          <a href="#" onClick={handleLogOut}>Log Out</a>
+          <a href='#'><UserOutlined  /> {userProfile.hoTen}</a>
+          <a href="#" onClick={handleLogOut}><LogoutOutlined /> Log Out</a>
         </>
       )
     }
